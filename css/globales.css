@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Khula", sans-serif;
+}
+
+body {
+  background-color: rgb(130, 130, 236);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.header__img-contend {
+  width: 130px;
+}
+
+.buttton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 100px;
+
+  .btn__search {
+    background-color: brown;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+}
+
+.typeImage-contend {
+  width: 40px;
+  height: 40px;
+}
+
+/*
+.pokeAppp {
+  width: 100%;
+  height: 100%;
+
+  .pokeAppp__contend {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.pokeAppp__current {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .pokemon__container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.pokeAppp__currentStack {
+}
+
+.type__img-contend {
+  width: 100px;
+  height: 50px;
+}
+
+.pokemonImage {
+  width: 100%;
+  height: 200px;
+}
+
+.info__characteristics {
+  padding: 10px;
+
+  .characteristics {
+    padding: 10px;
+    .characteristic {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.pokemon__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+
+  .pokemonImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+}
+
+.characteristic__item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.characteristic__value {
+  color: whitesmoke;
+}*/

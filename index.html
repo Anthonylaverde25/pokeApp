@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/globales.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <title>PokeApp</title>
+  </head>
+  <body>
+    <div class="container container__grid">
+      <div class="header header__container">
+        <div class="header__img">
+          <img
+            class="header__img-contend"
+            src="image/iconsPoke/logoPokemon.png"
+            alt=""
+          />
+        </div>
+
+        <div class="header__search">
+          <div class="search">
+            <form class="form" action="" method="get">
+              <div class="input__container">
+                <input
+                  class="input"
+                  type="number"
+                  id="searchId"
+                  min="1"
+                  placeholder="search pokemon by id"
+                />
+              </div>
+              <div class="form__button">
+                <button class="buttton btn__search">search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="appPokemon__container">
+          <div class="appPokemon__current">
+            <div class="appPokemon__current-image">
+              <img class="currentImg" src="" alt="" />
+            </div>
+            <div class="appPokemon__nameAndType">
+              <div class="typeImage">
+                <img
+                  class="typeImage-contend"
+                  src="image/iconsPoke/water.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="nameAndType">
+                <small class="type" id="type">Water</small>
+                <h2 class="name" id="name"></h2>
+              </div>
+            </div>
+            <div class="idPokemon">
+              <h3 class="id" id="id">#200</h3>
+            </div>
+          </div>
+          <div class="appPokemon__info">
+            <div class="current__info">
+              <ul class="characteristics">
+                <li class="characteristic">
+                  <span class="characteristic__item heigth">heigth</span>
+
+                  <p class="characteristic__value" id="heigth">0.5M</p>
+                </li>
+                <li class="characteristic">
+                  <span class="characteristic__item weigth">weigth</span>
+
+                  <p class="characteristic__value" id="weigth">9KG</p>
+                </li>
+                <li class="characteristic">
+                  <span class="characteristic__item abilities"> abilities</span>
+
+                  <p class="characteristic__value" id="abilities">Torrent</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="Javascript/main.js" type="module"></script>
+  </body>
+</html>
