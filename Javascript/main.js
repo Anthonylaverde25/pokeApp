@@ -8,12 +8,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
   let imageType = document.querySelector(".typeImage-contend");
   let input = document.querySelector("#searchId");
   let form = document.querySelector(".form");
+  let loaderOverlay = document.querySelector(".overlay__loader");
+  let idRender = document.querySelector("#id");
+  let id = 1;
+
+  const spinner = () => {
+    loaderOverlay.classList.add("show");
+  };
+
+  const hideSpinner = () => {
+    loaderOverlay.classList.remove("show");
+  };
 
   form.addEventListener("click", (e) => {
     e.preventDefault();
     input.addEventListener("change", (e) => {
-      let id = e.target.value;
+      id = e.target.value;
       getPokemonByid(id);
+      input.value = "";
     });
   });
 
@@ -113,30 +125,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
   async function getPokemonByid(pokeID) {
     try {
       const apiURL = `https://pokeapi.co/api/v2/pokemon/${pokeID}/`;
-
+      spinner();
       // TRAE LA RESPUESTA COMPLETA, ES DECIR UNA RESPUESTA HTTP QUE INCLUYE LA INFORMACION DEL HEADER Y DEL BODY DE LA SOLICITUD
       const response = await fetch(apiURL);
+
       if (!response.ok)
         throw new Error(`error al consultar la PokeApi ${response.status}`);
-
       // AL COMPLETAR LA SOLICITUD SE EJECUTA Y LEE EL CONTENIDO jSON DEL BODY DE LA RESPUESTA. ESTE JSON SE ANALIZA Y SE CONVIERTE EN UN OBJETO. DE LO CONTRARIO SOLO SE ESTARIA TRABAJANDO CON LA RESPUESTA HTTP
       const data = await response.json();
-      /*
-      const { name, height, weight, abilities } = data;
-
-      console.log(abilities[0].ability.name);
-
-      const imagePokemon = data.sprites.other.dream_world.front_default;
-      image.src = `${imagePokemon}`;
-      console.log(data);*/
+      hideSpinner();
       renderPokemon(data);
     } catch (error) {
       console.log(error);
+      hideSpinner();
     }
   }
 
   const renderPokemon = (data) => {
-    const { name, height, weight, abilities, sprites, types } = data;
+    const { name, height, weight, abilities, sprites, types, id } = data;
     console.log(types);
 
     const urlImage = data.sprites.other.dream_world.front_default;
@@ -147,6 +153,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     abilitiesPokemon.textContent = `${abilities[0].ability.name}`;
     typeOf.textContent = `${principalType}`;
     imagePokemon.src = `${urlImage}`;
+    idRender.textContent = `#${id}`;
 
     const body = document.body;
 
@@ -158,4 +165,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       console.log(imageType.src);
     }
   };
+
+  getPokemonByid(id);
 });

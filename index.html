@@ -8,6 +8,11 @@
     <title>PokeApp</title>
   </head>
   <body>
+    <div class="overlay__loader hide">
+      <div class="wrapper">
+        <div class="pokeball"></div>
+      </div>
+    </div>
     <div class="container container__grid">
       <div class="header header__container">
         <div class="header__img">
@@ -42,6 +47,8 @@
         <div class="appPokemon__container">
           <div class="appPokemon__current">
             <div class="appPokemon__current-image">
+              <div class="pokemonId"><h3 class="id" id="id">#240</h3></div>
+
               <img class="currentImg" src="" alt="" />
             </div>
             <div class="appPokemon__nameAndType">
@@ -57,9 +64,6 @@
                 <small class="type" id="type">Water</small>
                 <h2 class="name" id="name"></h2>
               </div>
-            </div>
-            <div class="idPokemon">
-              <h3 class="id" id="id">#200</h3>
             </div>
           </div>
           <div class="appPokemon__info">
